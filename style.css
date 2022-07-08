@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/earlyaccess/opensanshebrewcondensed.css');
+
+:root {
+  --clr-primay-700: #8a0000;
+  --clr-primay-900: #4d0000;
+  --clr-netural-100: #fff;
+  --clr-netural-200: #bbbbbb;
+  --clr-netural-300: #6e6e6e;
+  --clr-netural-700: #333;
+  --clr-netural-900: #000;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1200px;
+  width: 95%;
+  margin-inline: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Open Sans Hebrew Condensed', sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--clr-primay-700);
+}
+
+p {
+  color: var(--clr-netural-300);
+  margin-bottom: 1rem;
+}
+
+header,
+.website_info,
+.header_content,
+.row {
+  display: flex;
+}
+
+#features .row {
+  margin-block: 5rem;
+}
+
+footer .row {
+  justify-content: space-between;
+}
+
+.col-2 {
+  max-width: 50%;
+  padding-inline: 3rem;
+}
+
+.col-2:nth-child(1) {
+  padding-inline-start: 0;
+}
+
+.col-2:nth-last-child(1) {
+  padding-inline-end: 0;
+}
+
+.logo_image {
+  margin-block: auto;
+}
+
+footer {
+  background-color: var(--clr-netural-200);
+  color: var(--clr-netural-900);
+  padding-block: 1rem;
+  margin-block-start: 5rem;
+}
+
+footer p {
+  color: var(--clr-netural-700);
+}
+
+
+header {
+  border-bottom: 1px solid #ccc;
+}
+
+header .container {
+  max-width: none;
+}
+
+header h2 {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--clr-netural-900);
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+header p {
+  padding: 0;
+  margin: 0;
+}
+
+.website_info {
+  margin-block: 0.75rem;
+}
+
+main {
+  background-image: url('./images/paul-earle-wVjd0eWNqI8-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  padding-block: 4rem;
+
+}
+
+.main_content {
+  background-color: var(--clr-netural-100);
+  padding: 2rem;
+  max-width: 45rem;
+}
+
+.header_contact {
+  margin-inline-start: auto;
+  margin-block: auto;
+}
+
+header a {
+  color: var(--clr-netural-900);
+}
+
+section {
+  margin-block: 2rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  margin-block-start: 1rem;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: 0.5s;
+}
+
+.btn_primary {
+  background-color: var(--clr-primay-700);
+  color: var(--clr-netural-100);
+}
+
+.btn_primary:hover {
+  background-color: var(--clr-primay-900);
+}
+
+.btn_netural {
+  background-color: var(--clr-netural-100);
+  color: var(--clr-netural-900);
+}
+
+.btn_netural:hover {
+  background-color: var(--clr-netural-200);
+}
+
+#call_hero {
+  text-align: center;
+  background-image: linear-gradient(180deg, rgba(1, 5, 7, 1) 0%, rgba(1, 5, 7, 0.5) 100%), url('./images/matt-hardy-6ArTTluciuA-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  border-radius: 2rem;
+  padding-block: 2rem;
+}
+
+#call_hero p,
+#call_hero h3 {
+  color: var(--clr-netural-100);
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+@media screen and (max-width:800px) {
+
+  header,
+  .website_info,
+  .header_content,
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+  .revese{
+    flex-direction: column-reverse;
+  }
+
+  .col-2 {
+    max-width: 95%;
+    padding-inline: 0;
+    padding-block: 1rem;
+  }
+
+  header {
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+
+  .logo_image,
+  .header_contact {
+    padding-inline: auto;
+    margin-inline: auto;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+}
