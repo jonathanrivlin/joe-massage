@@ -62,7 +62,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
             <p className="text-base font-semibold leading-7 text-red-800">אודות</p>
-            <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">ג'ו מטפל אלטרנטיבי ומעסה שוודי הוליסטי בירושלים</h2>
+            <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">ג&apos;ו מטפל אלטרנטיבי ומעסה שוודי הוליסטי בירושלים</h2>
             <div className="mt-10 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-gray-700 lg:max-w-none lg:grid-cols-2">
               <div>
                 <p>
