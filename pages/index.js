@@ -45,7 +45,6 @@ const jsonLd = {
         { "@type": "Neighborhood", "name": "בית הכרם" },
         { "@type": "Neighborhood", "name": "נווה יעקב" },
         { "@type": "Neighborhood", "name": "גבעה הצרפתית" },
-        { "@type": "Neighborhood", "name": "בית חנינא" },
         { "@type": "Neighborhood", "name": "הר נוף" },
         { "@type": "Neighborhood", "name": "קרית משה" },
         { "@type": "Neighborhood", "name": "רחביה" },
@@ -276,11 +275,11 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
             {[
               'פסגת זאב', 'רמות', 'גבעת שאול', 'בית הכרם',
-              'נווה יעקב', 'פיסגת זאב מזרח', 'ענתות', 'אדם',
-              'גבעה הצרפתית', 'שעפט', 'בית חנינא', 'כפר עקב',
+              'נווה יעקב', 'גבעה הצרפתית', 'הר נוף', 'קרית משה',
               'ארנונה', 'מלחה', 'בקעה', 'קטמון',
-              'רחביה', 'קרית משה', 'גילה', 'הר נוף',
-              'עיר גנים', 'תלפיות', 'אבו תור', 'מרכז העיר',
+              'רחביה', 'גילה', 'עיר גנים', 'תלפיות',
+              'מושבה הגרמנית', 'טלביה', 'קרית יובל', 'ביר"מ',
+              'מנחה', 'בית וגן', 'רמת שרת', 'מרכז העיר',
             ].map((area) => (
               <div key={area}
                 className="flex items-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-medium text-gray-700 ring-1 ring-gray-200 hover:ring-red-200 hover:text-red-800 transition-all">
