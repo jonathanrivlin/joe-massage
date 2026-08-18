@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faPhone, faLocationDot, faCalendarCheck, faClock,
   faHandsHolding, faTint, faLeaf, faHouse, faTrophy,
-  faHeart, faCheck
+  faHeart, faCheck, faMapLocationDot
 } from '@fortawesome/free-solid-svg-icons'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 
@@ -40,10 +40,20 @@ const jsonLd = {
       "areaServed": [
         { "@type": "City", "name": "ירושלים" },
         { "@type": "Neighborhood", "name": "פסגת זאב" },
+        { "@type": "Neighborhood", "name": "רמות" },
         { "@type": "Neighborhood", "name": "גבעת שאול" },
         { "@type": "Neighborhood", "name": "בית הכרם" },
-        { "@type": "Neighborhood", "name": "רמות" },
-        { "@type": "Neighborhood", "name": "נווה יעקב" }
+        { "@type": "Neighborhood", "name": "נווה יעקב" },
+        { "@type": "Neighborhood", "name": "גבעה הצרפתית" },
+        { "@type": "Neighborhood", "name": "בית חנינא" },
+        { "@type": "Neighborhood", "name": "הר נוף" },
+        { "@type": "Neighborhood", "name": "קרית משה" },
+        { "@type": "Neighborhood", "name": "רחביה" },
+        { "@type": "Neighborhood", "name": "גילה" },
+        { "@type": "Neighborhood", "name": "מלחה" },
+        { "@type": "Neighborhood", "name": "בקעה" },
+        { "@type": "Neighborhood", "name": "תלפיות" },
+        { "@type": "Neighborhood", "name": "עיר גנים" }
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -247,6 +257,45 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── SERVICE AREAS ── */}
+      <section className="bg-gray-50 py-16 sm:py-24" id="areas">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mb-12">
+            <p className="text-base font-semibold leading-7 text-red-800">אזורי שירות</p>
+            <h2 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+              עיסוי שוודי בבית — מגיעים אליכם בירושלים
+            </h2>
+            <p className="mt-4 text-base text-gray-600 max-w-2xl">
+              ג&apos;ו מגיע אליכם הביתה לעיסוי שוודי — ללא צורך לנסוע. משרת את כל שכונות ירושלים ואזוריה.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+            {[
+              'פסגת זאב', 'רמות', 'גבעת שאול', 'בית הכרם',
+              'נווה יעקב', 'פיסגת זאב מזרח', 'ענתות', 'אדם',
+              'גבעה הצרפתית', 'שעפט', 'בית חנינא', 'כפר עקב',
+              'ארנונה', 'מלחה', 'בקעה', 'קטמון',
+              'רחביה', 'קרית משה', 'גילה', 'הר נוף',
+              'עיר גנים', 'תלפיות', 'אבו תור', 'מרכז העיר',
+            ].map((area) => (
+              <div key={area}
+                className="flex items-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-medium text-gray-700 ring-1 ring-gray-200 hover:ring-red-200 hover:text-red-800 transition-all">
+                <FontAwesomeIcon icon={faLocationDot} className="w-3.5 h-3.5 text-red-700 flex-shrink-0" />
+                {area}
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-8 text-sm text-gray-500 text-center">
+            לא רואים את השכונה שלכם?{' '}
+            <a href="tel:0522635895" className="text-red-800 font-semibold hover:underline">
+              התקשרו — נסדר
+            </a>
+          </p>
         </div>
       </section>
 
