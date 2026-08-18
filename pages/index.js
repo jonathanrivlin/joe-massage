@@ -99,12 +99,13 @@ function FaqItem({ question, answer }) {
   return (
     <div className="pt-8 lg:grid lg:grid-cols-12 lg:gap-8">
       <dt className="text-base font-semibold leading-7 text-gray-900 lg:col-span-5">
+        {/* Mobile: clickable with + toggle. Desktop: plain text */}
         <button onClick={() => setOpen(o => !o)}
-          className="w-full text-right flex items-start justify-between gap-4 lg:block"
+          className="w-full text-right flex items-start justify-between gap-4 lg:cursor-default"
           aria-expanded={open}>
           <span>{question}</span>
           <span className="flex-shrink-0 lg:hidden text-red-800 text-xl"
-            style={{ transform: open ? 'rotate(45deg)' : 'none', display: 'inline-block', transition: 'transform 0.2s' }}>+</span>
+            style={{ transform: open ? 'rotate(45deg)' : 'none', display: 'inline-block', transition: 'transform 0.2s' }} aria-hidden="true">+</span>
         </button>
       </dt>
       <dd className="mt-4 lg:col-span-7 lg:mt-0">
