@@ -32,6 +32,16 @@ body {
   color: #991b1b;
 }
 
+/* ── Hero animations ── */
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-title { animation: hero-fade-up 0.7s ease forwards; }
+.hero-sub   { animation: hero-fade-up 0.7s 0.15s ease both; }
+.hero-btns  { animation: hero-fade-up 0.7s 0.3s ease both; }
+.hero-pills { animation: hero-fade-up 0.7s 0.45s ease both; }
+
 /* ── Underline ── */
 .heading-line::after {
   content: '';
