@@ -190,7 +190,7 @@ export default function Home() {
               <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500">
                 <span>🏠 טיפול בבית הלקוח</span>
                 <span>📍 פסגת זאב · ירושלים</span>
-                <span>✓ זמין כל ימות השבוע</span>
+                <span>✓ זמין כל ימות השבוע (חוץ משבת)</span>
               </div>
             </div>
           </div>
