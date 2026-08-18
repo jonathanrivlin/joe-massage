@@ -207,6 +207,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── BENEFITS ── */}
+      <section className="bg-gray-50 py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:text-center lg:mx-auto mb-12">
+            <p className="text-base font-semibold leading-7 text-red-800">למה לבחור בג&apos;ו?</p>
+            <h2 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">היתרונות שלנו</h2>
+          </div>
+          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2 lg:max-w-none lg:grid-cols-3">
+            {[
+              { emoji: '🤲', title: 'שחרור שרירים', desc: 'טכניקות מדויקות לשחרור שרירים תפוסים בגב, צוואר וכתפיים.' },
+              { emoji: '🌿', title: 'שמנים ארומתרפיים', desc: 'שמנים טבעיים איכותיים לרוגע, ריח נעים ותוצאות טיפוליות.' },
+              { emoji: '🏠', title: 'טיפול בבית הלקוח', desc: 'מגיעים אליכם — אין צורך לנסוע לאחר הטיפול.' },
+              { emoji: '🩸', title: 'שיפור זרימת הדם', desc: 'עיסוי שוודי מגביר את מחזור הדם ומחדש את אנרגיית הגוף.' },
+              { emoji: '🕐', title: 'שעות גמישות', desc: 'זמינות כל ימות השבוע כולל ערבים (חוץ משבת).' },
+              { emoji: '🏆', title: '25+ שנות ניסיון', desc: 'מעל רבע מאה ניסיון מקצועי בעיסוי שוודי בירושלים.' },
+            ].map(b => (
+              <div key={b.title} className="relative flex gap-x-4 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-200 hover:ring-red-200 hover:shadow-md transition-all">
+                <span className="text-3xl flex-shrink-0">{b.emoji}</span>
+                <div>
+                  <h3 className="font-semibold text-gray-900 text-sm">{b.title}</h3>
+                  <p className="mt-1 text-sm leading-6 text-gray-600">{b.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── ABOUT ── */}
       <section className="bg-white py-24 sm:py-32" id="about">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -278,13 +306,35 @@ export default function Home() {
 
       {/* ── FOOTER ── */}
       <footer className="bg-red-900 text-white">
-        <div className="mx-auto max-w-7xl py-12 px-6 md:flex md:items-center md:justify-between lg:px-8">
-          <div className="flex justify-center gap-x-6 md:order-2 text-sm">
-            <Link href="/accessibility" className="hover:text-red-200 transition-colors">הצהרת נגישות</Link>
-            <a href="https://rivlin.dev/web-development" className="hover:text-red-200 transition-colors">פיתוח אתרים</a>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 pb-10 border-b border-red-800">
+            <div>
+              <h3 className="text-sm font-semibold text-red-200 mb-3">ג&apos;ו עיסוי שוודי הוליסטי</h3>
+              <p className="text-sm text-red-300 leading-6">מעסה מקצועי בירושלים עם 25+ שנות ניסיון. פועל מאזור פסגת זאב ומגיע לכל שכונות ירושלים.</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-red-200 mb-3">אזורי שירות</h3>
+              <ul className="text-sm text-red-300 leading-7 space-y-1">
+                <li>פסגת זאב · רמות</li>
+                <li>גבעת שאול · בית הכרם</li>
+                <li>נווה יעקב · כל ירושלים</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-red-200 mb-3">צרו קשר</h3>
+              <ul className="text-sm text-red-300 leading-7 space-y-1">
+                <li><a href="tel:0522635895" className="hover:text-white transition-colors">📞 052-263-5895</a></li>
+                <li><a href={WA_HREF} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">💬 WhatsApp</a></li>
+                <li>ראשון–שישי 8:00–21:00</li>
+              </ul>
+            </div>
           </div>
-          <div className="mt-8 md:order-1 md:mt-0">
-            <p className="text-center text-sm leading-5 text-red-200">
+          <div className="pt-8 md:flex md:items-center md:justify-between">
+            <div className="flex justify-center gap-x-6 md:order-2 text-sm">
+              <Link href="/accessibility" className="text-red-300 hover:text-white transition-colors">הצהרת נגישות</Link>
+              <a href="https://rivlin.dev/web-development" className="text-red-300 hover:text-white transition-colors">פיתוח אתרים</a>
+            </div>
+            <p className="mt-6 text-center text-xs leading-5 text-red-400 md:mt-0 md:order-1">
               &copy; {new Date().getFullYear()} ג&apos;ו עיסוי שוודי הוליסטי — ירושלים (פסגת זאב)
             </p>
           </div>
