@@ -15,8 +15,8 @@ const jsonLd = {
       "@type": "LocalBusiness",
       "@id": `${SITE_URL}/#business`,
       "name": "ג'ו עיסוי שוודי הוליסטי",
-      "alternateName": ["עיסוי שוודי פסגת זאב", "עיסוי שוודי ירושלים", "מעסה שוודי ירושלים"],
-      "description": "מעסה שוודי הוליסטי מקצועי בירושלים ופסגת זאב עם 25+ שנות ניסיון. עיסוי שוודי, עיסוי הוליסטי, שחרור שרירים, שמנים ארומתרפיים. טיפול בבית הלקוח.",
+      "alternateName": ["עיסוי שוודי ירושלים", "עיסוי שוודי פסגת זאב", "מעסה שוודי ירושלים", "מעסה פסגת זאב"],
+      "description": "מעסה שוודי הוליסטי מקצועי בירושלים (פסגת זאב) עם 25+ שנות ניסיון. עיסוי שוודי, עיסוי הוליסטי, שחרור שרירים, שמנים ארומתרפיים. טיפול בבית הלקוח.",
       "url": SITE_URL,
       "telephone": "+972522635895",
       "priceRange": "₪₪",
@@ -24,8 +24,9 @@ const jsonLd = {
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "ירושלים",
-        "addressRegion": "פסגת זאב",
-        "addressCountry": "IL"
+        "addressRegion": "ירושלים",
+        "addressCountry": "IL",
+        "description": "פסגת זאב, ירושלים"
       },
       "geo": {
         "@type": "GeoCoordinates",
@@ -123,26 +124,26 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>עיסוי שוודי פסגת זאב וירושלים | ג&apos;ו — 25+ שנות ניסיון | 052-263-5895</title>
-        <meta name="description" content="עיסוי שוודי הוליסטי בפסגת זאב וירושלים — ג'ו, מעסה מקצועי עם 25+ שנות ניסיון. שחרור שרירים תפוסים, הפחתת כאבים, שמנים ארומתרפיים. טיפול בבית הלקוח. התקשרו: 052-263-5895" />
-        <meta name="keywords" content="עיסוי שוודי פסגת זאב, עיסוי שוודי ירושלים, מעסה פסגת זאב, עיסוי הוליסטי ירושלים, עיסוי בבית פסגת זאב, שחרור שרירים ירושלים, עיסוי רקמות עמוק ירושלים, מעסה שוודי ירושלים" />
+        <title>עיסוי שוודי בירושלים ופסגת זאב | ג&apos;ו — 25+ שנות ניסיון | 052-263-5895</title>
+        <meta name="description" content="עיסוי שוודי הוליסטי בירושלים — ג'ו, מעסה מקצועי עם 25+ שנות ניסיון באזור פסגת זאב. שחרור שרירים תפוסים, הפחתת כאבים, שמנים ארומתרפיים. טיפול בבית הלקוח. 052-263-5895" />
+        <meta name="keywords" content="עיסוי שוודי ירושלים, עיסוי שוודי פסגת זאב, מעסה ירושלים, מעסה פסגת זאב, עיסוי הוליסטי ירושלים, עיסוי בבית ירושלים, שחרור שרירים ירושלים, עיסוי רקמות עמוק ירושלים, מעסה שוודי פסגת זאב" />
         <link rel="canonical" href={SITE_URL} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <meta name="geo.region" content="IL-JM" />
-        <meta name="geo.placename" content="ירושלים, פסגת זאב" />
+        <meta name="geo.placename" content="ירושלים" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={SITE_URL} />
-        <meta property="og:title" content="עיסוי שוודי פסגת זאב וירושלים | ג'ו — 25+ שנות ניסיון" />
+        <meta property="og:title" content="עיסוי שוודי בירושלים ופסגת זאב | ג'ו — 25+ שנות ניסיון" />
         <meta property="og:description" content="עיסוי שוודי הוליסטי בפסגת זאב וירושלים. שחרור שרירים, הפחתת כאב, שמנים ארומתרפיים. טיפול בבית הלקוח. 052-263-5895" />
         <meta property="og:locale" content="he_IL" />
         <meta property="og:site_name" content="ג'ו עיסוי שוודי הוליסטי" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="עיסוי שוודי פסגת זאב וירושלים | ג'ו" />
+        <meta name="twitter:title" content="עיסוי שוודי בירושלים ופסגת זאב | ג'ו" />
         <meta name="twitter:description" content="עיסוי שוודי הוליסטי בפסגת זאב וירושלים. 25+ שנות ניסיון. 052-263-5895" />
 
         <link rel="icon" href="/favicon.ico" />
@@ -168,10 +169,10 @@ export default function Home() {
               </div>
 
               <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                עיסוי שוודי הוליסטי<br />בפסגת זאב וירושלים
+                עיסוי שוודי הוליסטי<br />בירושלים
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                מטפל מנוסה עם למעלה מ-25 שנות ניסיון בעיסוי שוודי הוליסטי. שחרור שרירים תפוסים, הפחתת כאבים, שמנים ארומתרפיים — גם בבית שלכם בפסגת זאב וירושלים.
+                מטפל מנוסה עם למעלה מ-25 שנות ניסיון בעיסוי שוודי הוליסטי בירושלים. שחרור שרירים תפוסים, הפחתת כאבים, שמנים ארומתרפיים — גם בבית שלכם באזור פסגת זאב.
               </p>
 
               <div className="mt-10 flex flex-col sm:flex-row items-start gap-4">
@@ -211,18 +212,18 @@ export default function Home() {
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
             <p className="text-base font-semibold leading-7 text-red-800">אודות</p>
             <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              ג&apos;ו — מעסה שוודי הוליסטי בפסגת זאב וירושלים
+              ג&apos;ו — מעסה שוודי הוליסטי בירושלים
             </h2>
             <div className="mt-10 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-gray-700 lg:max-w-none lg:grid-cols-2">
               <div>
-                <p>ג&apos;ו — מעסה שוודי הוליסטי בפסגת זאב וירושלים עם למעלה מ-25 שנות ניסיון בתחום. עיסוי שוודי הוליסטי בפסגת זאב המסייע להשיג בריאות ורווחה מיטביים.</p>
+                <p>ג&apos;ו — מעסה שוודי הוליסטי בירושלים עם למעלה מ-25 שנות ניסיון בתחום. פועל מאזור פסגת זאב ומגיע לכל רחבי ירושלים — רמות, גבעת שאול, בית הכרם, נווה יעקב ועוד.</p>
                 <p className="mt-8">המטפל המנוסה משתמש במגוון טכניקות עיסוי שוודי, עיסוי רקמות עמוק ומתיחות, לטיפול באזורים ספציפיים של כאבים, מתח ואי נוחות. הטיפול מותאם אישית לצרכי כל מטופל.</p>
                 <p className="mt-8">במהלך הטיפולים נעשה שימוש בשמנים ארומתרפיים לריכוך ושחרור שרירים תפוסים, טיפול בכאבי ראש, הפחתת דלקות, שיפור זרימת הדם — והשראת רגיעה עמוקה.</p>
               </div>
               <div>
-                <p>כמעסה שוודי בפסגת זאב, אני מקדיש זמן להבין את הצרכים הייחודיים של כל לקוח. בין אם מחפשים הקלה מכאבים כרוניים, מתאוששים מפציעה, או מחפשים להירגע ולהוריד מתח.</p>
-                <p className="mt-8">אני מחויב לסביבה שלווה ומסבירת פנים — מוזיקה מרגיעה, מיטת עיסוי נוחה, וטיפול אישי. חווית העיסוי השוודי בפסגת זאב תהיה מרעננת כמו הטיפול עצמו.</p>
-                <p className="mt-8"><strong>קיימת אפשרות לעיסוי שוודי בבית הלקוח</strong> בפסגת זאב, ירושלים, רמות, גבעת שאול, בית הכרם ונווה יעקב.</p>
+                <p>אני מקדיש זמן להבין את הצרכים הייחודיים של כל לקוח בירושלים. בין אם מחפשים הקלה מכאבים כרוניים, מתאוששים מפציעה, או מחפשים להירגע ולהוריד מתח.</p>
+                <p className="mt-8">אני מחויב לסביבה שלווה ומסבירת פנים — מוזיקה מרגיעה, מיטת עיסוי נוחה, וטיפול אישי. חווית העיסוי השוודי בירושלים תהיה מרעננת כמו הטיפול עצמו.</p>
+                <p className="mt-8"><strong>קיימת אפשרות לעיסוי שוודי בבית הלקוח</strong> — מגיעים אליכם בפסגת זאב, רמות, גבעת שאול, בית הכרם, נווה יעקב וכל שכונות ירושלים.</p>
               </div>
             </div>
           </div>
@@ -233,7 +234,7 @@ export default function Home() {
       <section className="bg-red-50" id="contact">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            מעוניין/ת לקבוע עיסוי שוודי<br className="hidden sm:block" /> בפסגת זאב?
+            מעוניין/ת לקבוע עיסוי שוודי<br className="hidden sm:block" /> בירושלים?
           </h2>
           <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 lg:mt-0 lg:flex-shrink-0">
             <a href="tel:0522635895"
@@ -252,7 +253,7 @@ export default function Home() {
       {/* ── FAQ ── */}
       <section className="bg-white" id="faq">
         <div className="mx-auto max-w-7xl divide-y divide-gray-900/10 px-6 py-24 sm:py-32 lg:py-40 lg:px-8">
-          <h2 className="text-2xl font-bold leading-10 tracking-tight text-gray-900">שאלות נפוצות על עיסוי שוודי בפסגת זאב</h2>
+          <h2 className="text-2xl font-bold leading-10 tracking-tight text-gray-900">שאלות נפוצות על עיסוי שוודי בירושלים</h2>
           <dl className="mt-10 space-y-8 divide-y divide-gray-900/10">
             {faqs.map((faq) => (
               <FaqItem key={faq.question} question={faq.question} answer={faq.answer} />
@@ -283,7 +284,7 @@ export default function Home() {
           </div>
           <div className="mt-8 md:order-1 md:mt-0">
             <p className="text-center text-sm leading-5 text-red-200">
-              &copy; {new Date().getFullYear()} ג&apos;ו עיסוי שוודי הוליסטי — פסגת זאב וירושלים
+              &copy; {new Date().getFullYear()} ג&apos;ו עיסוי שוודי הוליסטי — ירושלים (פסגת זאב)
             </p>
           </div>
         </div>
