@@ -259,6 +259,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── HOW IT WORKS ── */}
+      <section className="bg-white py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mb-12">
+            <p className="text-base font-semibold leading-7 text-red-800">תהליך פשוט</p>
+            <h2 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">איך זה עובד?</h2>
+          </div>
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+            {[
+              { num: '01', title: 'יוצרים קשר', desc: 'מתקשרים או שולחים הודעת WhatsApp — ג\'ו עונה במהירות ומתאם זמן נוח.' },
+              { num: '02', title: 'קובעים מועד', desc: 'בוחרים יום ושעה שמתאימים לכם. ג\'ו מגיע אליכם הביתה עם כל הציוד הדרוש.' },
+              { num: '03', title: 'נהנים מהטיפול', desc: 'עיסוי שוודי מקצועי בנוחות הבית שלכם — בלי נסיעות, בלי המתנה, בלי לחץ.' },
+            ].map((step) => (
+              <div key={step.num} className="relative flex gap-x-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-red-800 flex items-center justify-center text-white text-sm font-bold">
+                  {step.num}
+                </div>
+                <div className="pt-1">
+                  <h3 className="font-semibold text-gray-900 text-base mb-2">{step.title}</h3>
+                  <p className="text-sm leading-7 text-gray-600">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12 flex flex-col sm:flex-row gap-4">
+            <a href="tel:0522635895"
+              className="inline-flex items-center gap-2 rounded-md bg-red-800 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-red-900 transition-colors">
+              <FontAwesomeIcon icon={faPhone} className="w-4 h-4" />
+              התקשרו עכשיו
+            </a>
+            <a href={WA_HREF} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 transition-colors">
+              <FontAwesomeIcon icon={faWhatsapp} className="w-4 h-4 text-green-600" />
+              שלחו הודעה
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ── SERVICE AREAS ── */}
       <section className="bg-gray-50 py-16 sm:py-24" id="areas">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
