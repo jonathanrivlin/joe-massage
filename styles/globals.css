@@ -2,26 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --brand:     #c85118;
-  --brand-dk:  #a63d15;
-  --brand-lt:  #fae8d8;
-  --warm-bg:   #faf9f7;
-  --warm-dark: #2e2925;
-  --text:      #1c1917;
-  --muted:     #78716c;
-}
-
-*, *::before, *::after { box-sizing: border-box; }
-
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Heebo', sans-serif;
-  color: var(--text);
-  background: #fff;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -38,38 +22,32 @@ body {
 .whatsapp-float { animation: wa-bounce-in 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards; }
 .wa-pulse       { animation: wa-pulse 1.8s ease-in-out infinite; }
 
-/* ── Scroll fade-in ── */
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.fade-up { animation: fade-up 0.6s ease forwards; }
-
-/* ── Section divider ── */
+/* ── Section label ── */
 .section-label {
+  display: block;
   font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--brand);
+  color: #991b1b;
 }
 
-/* ── Underline accent ── */
-.heading-underline::after {
+/* ── Underline ── */
+.heading-line::after {
   content: '';
   display: block;
-  width: 48px;
+  width: 44px;
   height: 3px;
-  background: var(--brand);
   border-radius: 2px;
-  margin: 12px auto 0;
+  background: #991b1b;
+  margin: 10px auto 0;
 }
-.heading-underline-right::after {
+.heading-line-right::after {
   content: '';
   display: block;
-  width: 48px;
+  width: 44px;
   height: 3px;
-  background: var(--brand);
   border-radius: 2px;
-  margin: 12px 0 0;
+  background: #991b1b;
+  margin: 10px 0 0;
 }
