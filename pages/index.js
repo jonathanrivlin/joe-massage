@@ -332,7 +332,6 @@ export default function Home() {
           <div className="pt-8 md:flex md:items-center md:justify-between">
             <div className="flex justify-center gap-x-6 md:order-2 text-sm">
               <Link href="/accessibility" className="text-red-300 hover:text-white transition-colors">הצהרת נגישות</Link>
-              <a href="https://rivlin.dev/web-development" className="text-red-300 hover:text-white transition-colors">פיתוח אתרים</a>
             </div>
             <p className="mt-6 text-center text-xs leading-5 text-red-400 md:mt-0 md:order-1">
               &copy; {new Date().getFullYear()} ג&apos;ו עיסוי שוודי הוליסטי — ירושלים (פסגת זאב)
