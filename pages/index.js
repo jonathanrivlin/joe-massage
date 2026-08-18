@@ -197,7 +197,7 @@ export default function Home() {
       </section>
 
       {/* ══ FAQ ══ */}
-      <section className="bg-white py-24 sm:py-28" dir="rtl">
+      <section id="faq" className="bg-white py-24 sm:py-28" dir="rtl">
         <div className="mx-auto max-w-2xl px-6">
           <div className="text-center mb-12">
             <span className="section-label mb-3">שאלות ותשובות</span>
