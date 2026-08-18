@@ -7,57 +7,28 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Heebo', sans-serif;
   -webkit-font-smoothing: antialiased;
+  color: #1c1917;
 }
 
-/* ── WhatsApp float ── */
-@keyframes wa-bounce-in {
-  0%   { opacity: 0; transform: scale(0.4) translateY(20px); }
-  70%  { transform: scale(1.12) translateY(-4px); }
-  100% { opacity: 1; transform: scale(1) translateY(0); }
+/* WhatsApp float */
+@keyframes wa-in {
+  from { opacity: 0; transform: scale(0.5); }
+  to   { opacity: 1; transform: scale(1); }
 }
 @keyframes wa-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
-  50%       { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
+  0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.45); }
+  50%     { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
 }
-.whatsapp-float { animation: wa-bounce-in 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards; }
-.wa-pulse       { animation: wa-pulse 1.8s ease-in-out infinite; }
+.wa-float { animation: wa-in 0.4s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+.wa-pulse { animation: wa-pulse 2s ease-in-out infinite; }
 
-/* ── Section label ── */
-.section-label {
-  display: block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #991b1b;
-}
-
-/* ── Hero animations ── */
-@keyframes hero-fade-up {
-  from { opacity: 0; transform: translateY(32px); }
+/* Hero fade-up stagger */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.hero-title { animation: hero-fade-up 0.7s ease forwards; }
-.hero-sub   { animation: hero-fade-up 0.7s 0.15s ease both; }
-.hero-btns  { animation: hero-fade-up 0.7s 0.3s ease both; }
-.hero-pills { animation: hero-fade-up 0.7s 0.45s ease both; }
-
-/* ── Underline ── */
-.heading-line::after {
-  content: '';
-  display: block;
-  width: 44px;
-  height: 3px;
-  border-radius: 2px;
-  background: #991b1b;
-  margin: 10px auto 0;
-}
-.heading-line-right::after {
-  content: '';
-  display: block;
-  width: 44px;
-  height: 3px;
-  border-radius: 2px;
-  background: #991b1b;
-  margin: 10px 0 0;
-}
+.hu-1 { animation: fade-up 0.65s 0.0s ease both; }
+.hu-2 { animation: fade-up 0.65s 0.12s ease both; }
+.hu-3 { animation: fade-up 0.65s 0.24s ease both; }
+.hu-4 { animation: fade-up 0.65s 0.36s ease both; }
+.hu-5 { animation: fade-up 0.65s 0.48s ease both; }
