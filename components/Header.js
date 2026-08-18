@@ -37,7 +37,7 @@ export default function Header() {
             </Link>
           ))}
           <a href="tel:0522635895" className="text-sm font-semibold leading-6 text-gray-900">
-            התקשרו עכשיו - 052-263-5895
+            התקשרו עכשיו - 0522635895
           </a>
         </div>
       </nav>
@@ -72,12 +72,12 @@ export default function Header() {
                 ))}
               </div>
               <div className="py-6">
-                <a
+                <Link
                   href="tel:0522635895"
                   className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  התקשרו עכשיו - 052-263-5895
-                </a>
+                  התקשרו עכשיו - 0522635895
+                </Link>
               </div>
             </div>
           </div>
