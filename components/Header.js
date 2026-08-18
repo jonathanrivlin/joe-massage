@@ -8,7 +8,6 @@ import Link from 'next/link'
 const navigation = [
   { name: 'דף הבית', href: '/' },
   { name: 'אודות', href: '/#about' },
-  { name: 'טיפולים', href: '/#treatments' },
   { name: 'צור קשר', href: '/#contact' },
 ]
 
