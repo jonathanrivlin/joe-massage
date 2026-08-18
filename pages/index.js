@@ -103,18 +103,20 @@ const faqs = [
 
 function FaqItem({ question, answer }) {
   const [open, setOpen] = useState(false)
+  const id = `faq-${question.replace(/\s+/g, '-').replace(/[?"]/g, '').slice(0, 20)}`
   return (
     <div className="pt-8 lg:grid lg:grid-cols-12 lg:gap-8">
       <dt className="text-base font-semibold leading-7 text-gray-900 lg:col-span-5">
         <button onClick={() => setOpen(o => !o)}
-          className="w-full text-right flex items-start justify-between gap-4 lg:cursor-default"
-          aria-expanded={open}>
+          className="w-full text-right flex items-start justify-between gap-4 lg:cursor-default focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-800 rounded"
+          aria-expanded={open}
+          aria-controls={id}>
           <span>{question}</span>
           <span className="flex-shrink-0 lg:hidden text-red-800 text-xl"
             style={{ transform: open ? 'rotate(45deg)' : 'none', display: 'inline-block', transition: 'transform 0.2s' }} aria-hidden="true">+</span>
         </button>
       </dt>
-      <dd className="mt-4 lg:col-span-7 lg:mt-0">
+      <dd id={id} className="mt-4 lg:col-span-7 lg:mt-0">
         <p className={`text-base leading-7 text-gray-600 ${!open ? 'hidden lg:block' : ''}`}>{answer}</p>
       </dd>
     </div>
@@ -150,10 +152,17 @@ export default function Home() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </Head>
 
+      {/* ── SKIP NAV ── */}
+      <a href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:right-4 focus:z-50 focus:rounded-md focus:bg-red-800 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg">
+        דלג לתוכן הראשי
+      </a>
+
       <Header />
 
       {/* ── HERO ── */}
-      <section className="relative bg-white">
+      <main id="main-content">
+      <section className="relative bg-white" aria-label="ראשי">
         <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
           <div className="px-6 pt-10 pb-24 sm:pb-32 lg:col-span-7 lg:px-0 lg:pt-48 lg:pb-56 xl:col-span-6">
             <div className="mx-auto max-w-2xl lg:mx-0">
@@ -213,7 +222,7 @@ export default function Home() {
       </section>
 
       {/* ── BENEFITS ── */}
-      <section className="bg-gray-50 py-16 sm:py-24">
+      <section className="bg-gray-50 py-16 sm:py-24" aria-label="יתרונות">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center lg:mx-auto mb-12">
             <p className="text-base font-semibold leading-7 text-red-800">למה לבחור בג&apos;ו?</p>
@@ -236,7 +245,7 @@ export default function Home() {
       </section>
 
       {/* ── ABOUT ── */}
-      <section className="bg-white py-24 sm:py-32" id="about">
+      <section className="bg-white py-24 sm:py-32" id="about" aria-label="אודות">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
             <p className="text-base font-semibold leading-7 text-red-800">אודות</p>
@@ -260,7 +269,7 @@ export default function Home() {
       </section>
 
       {/* ── HOW IT WORKS ── */}
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-white py-16 sm:py-24" aria-label="איך זה עובד">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-12">
             <p className="text-base font-semibold leading-7 text-red-800">תהליך פשוט</p>
@@ -299,7 +308,7 @@ export default function Home() {
       </section>
 
       {/* ── SERVICE AREAS ── */}
-      <section className="bg-gray-50 py-16 sm:py-24" id="areas">
+      <section className="bg-gray-50 py-16 sm:py-24" id="areas" aria-label="אזורי שירות">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-12">
             <p className="text-base font-semibold leading-7 text-red-800">אזורי שירות</p>
@@ -338,7 +347,7 @@ export default function Home() {
       </section>
 
       {/* ── CONTACT ── */}
-      <section className="bg-red-50" id="contact">
+      <section className="bg-red-50" id="contact" aria-label="צרו קשר">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             מעוניין/ת לקבוע עיסוי שוודי<br className="hidden sm:block" /> בירושלים?
@@ -360,7 +369,7 @@ export default function Home() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="bg-white" id="faq">
+      <section className="bg-white" id="faq" aria-label="שאלות נפוצות">
         <div className="mx-auto max-w-7xl divide-y divide-gray-900/10 px-6 py-24 sm:py-32 lg:py-40 lg:px-8">
           <h2 className="text-2xl font-bold leading-10 tracking-tight text-gray-900">שאלות נפוצות על עיסוי שוודי בירושלים</h2>
           <dl className="mt-10 space-y-8 divide-y divide-gray-900/10">
@@ -372,7 +381,7 @@ export default function Home() {
       </section>
 
       {/* ── MOBILE STICKY BAR ── */}
-      <div className="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-white border-t border-slate-200 px-4 py-3 flex gap-3 shadow-lg">
+      <div className="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-white border-t border-slate-200 px-4 py-3 flex gap-3 shadow-lg" role="navigation" aria-label="פעולות מהירות">
         <a href="tel:0522635895"
           className="flex-1 inline-flex items-center justify-center gap-2 rounded-md bg-red-800 py-3 text-sm font-semibold text-white hover:bg-red-900 transition-colors">
           <FontAwesomeIcon icon={faPhone} className="w-4 h-4" />
@@ -387,7 +396,7 @@ export default function Home() {
       </div>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-red-900 text-white">
+      <footer className="bg-red-900 text-white pb-20 lg:pb-0" role="contentinfo">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 pb-10 border-b border-red-800">
             <div>
@@ -434,6 +443,8 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      </main>
 
       {/* ── WA FLOAT (desktop) ── */}
       {showWA && (
