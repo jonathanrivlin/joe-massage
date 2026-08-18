@@ -5,9 +5,12 @@ import LogoPic from '../public/logo.png'
 import Image from 'next/image'
 import Link from 'next/link'
 
+const WA_HREF = "https://wa.me/9720522635895?text=%D7%A9%D7%9C%D7%95%D7%9D%2C+%D7%90%D7%A9%D7%9E%D7%97+%D7%9C%D7%A7%D7%91%D7%95%D7%A2+%D7%A2%D7%99%D7%A1%D7%95%D7%99+%D7%A2%D7%9D+%D7%92%27%D7%95"
+
 const navigation = [
   { name: 'דף הבית', href: '/' },
   { name: 'אודות', href: '/#about' },
+  { name: 'שאלות נפוצות', href: '/#faq' },
   { name: 'צור קשר', href: '/#contact' },
 ]
 
@@ -15,11 +18,38 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="z-40 sticky top-0 bg-white border border-white border-b-slate-300">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-        <Link href="/" className="-m-1.5 p-1.5">
-          <Image src={LogoPic} alt="ג'ו עיסוי שוודי הוליסטי בירושלים" />
+    <header className="z-40 sticky top-0 bg-white border-b border-slate-200 shadow-sm">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8" aria-label="Global">
+
+        {/* Logo */}
+        <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
+          <Image src={LogoPic} alt="ג'ו עיסוי שוודי הוליסטי בירושלים" height={36} style={{ width: 'auto', height: 36 }} />
         </Link>
+
+        {/* Desktop nav */}
+        <div className="hidden lg:flex lg:gap-x-10 items-center">
+          {navigation.map((item) => (
+            <Link key={item.name} href={item.href}
+              className="text-sm font-semibold leading-6 text-gray-700 hover:text-red-800 transition-colors">
+              {item.name}
+            </Link>
+          ))}
+        </div>
+
+        {/* Desktop CTAs */}
+        <div className="hidden lg:flex items-center gap-3">
+          <a href="tel:0522635895"
+            className="rounded-md bg-red-800 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-900 transition-colors">
+            📞 052-263-5895
+          </a>
+          <a href={WA_HREF} target="_blank" rel="noopener noreferrer"
+            className="rounded-md px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors"
+            style={{ background: '#25D366' }}>
+            💬 WhatsApp
+          </a>
+        </div>
+
+        {/* Hamburger */}
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -27,26 +57,18 @@ export default function Header() {
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">פתיחת תפריט ראשי</span>
-            <Bars3Icon className="h-8 w-8" aria-hidden="true" />
+            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
-          {navigation.map((item) => (
-            <Link key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
-              {item.name}
-            </Link>
-          ))}
-          <a href="tel:0522635895" className="text-sm font-semibold leading-6 text-gray-900">
-            התקשרו עכשיו - 0522635895
-          </a>
-        </div>
       </nav>
+
+      {/* Mobile menu */}
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-        <div className="fixed inset-0 z-50" />
+        <div className="fixed inset-0 z-50 bg-black/20" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link href="/" className="-m-1.5 p-1.5">
-              <Image src={LogoPic} alt="ג'ו עיסוי שוודי הוליסטי בירושלים" />
+            <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
+              <Image src={LogoPic} alt="ג'ו עיסוי שוודי הוליסטי בירושלים" height={32} style={{ width: 'auto', height: 32 }} />
             </Link>
             <button
               type="button"
@@ -54,30 +76,34 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">סגירת תפריט ראשי</span>
-              <XMarkIcon className="h-8 w-8" aria-hidden="true" />
+              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
+
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-10">
+              <div className="space-y-1 py-8">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg py-3 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-red-50 hover:text-red-800 transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
                   </Link>
                 ))}
               </div>
-              <div className="py-6">
-                <Link
-                  href="tel:0522635895"
-                  className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  התקשרו עכשיו - 0522635895
-                </Link>
+              <div className="py-6 space-y-3">
+                <a href="tel:0522635895"
+                  className="block w-full text-center rounded-md bg-red-800 px-4 py-3 text-base font-semibold text-white shadow-sm hover:bg-red-900 transition-colors">
+                  📞 052-263-5895
+                </a>
+                <a href={WA_HREF} target="_blank" rel="noopener noreferrer"
+                  className="block w-full text-center rounded-md px-4 py-3 text-base font-semibold text-white shadow-sm transition-colors"
+                  style={{ background: '#25D366' }}>
+                  💬 WhatsApp
+                </a>
               </div>
             </div>
           </div>
