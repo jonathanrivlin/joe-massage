@@ -84,122 +84,92 @@ export default function Home() {
       <Header />
 
       {/* ══ HERO ══ */}
-      <section
-        className="relative flex flex-col lg:flex-row overflow-hidden min-h-[100vh] lg:min-h-screen"
-        dir="rtl"
-        style={{ paddingTop: 68 }}
-      >
-        {/* ── Text side (right, 60% on desktop) ── */}
-        <div
-          className="relative z-10 flex flex-col justify-center px-8 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-0 w-full lg:w-[60%] flex-shrink-0"
-          style={{
-            background: 'linear-gradient(135deg, #1a0a0a 0%, #2d1515 40%, #1f0d0d 70%, #0d0505 100%)',
-          }}
-        >
-          {/* Subtle dot texture overlay */}
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px)',
-              backgroundSize: '28px 28px',
-            }}
-          />
+      <section className="relative min-h-screen flex items-center overflow-hidden" dir="rtl">
 
-          <div className="relative z-10 max-w-lg">
-            {/* Trust badge */}
-            <div className="hero-title mb-6 flex items-center gap-2">
-              <span className="text-yellow-400 text-sm tracking-wide">⭐⭐⭐⭐⭐</span>
-              <span className="text-white/50 text-sm">מעל 1,000 לקוחות מרוצים</span>
+        {/* BG image */}
+        <Image
+          src={HeroPic}
+          alt="עיסוי שוודי הוליסטי בירושלים"
+          fill
+          className="object-cover object-center scale-105"
+          style={{ filter: 'brightness(0.45) saturate(0.6)' }}
+          priority
+        />
+
+        {/* Multi-layer gradient */}
+        <div className="absolute inset-0" style={{
+          background: 'linear-gradient(105deg, rgba(120,10,10,0.55) 0%, rgba(0,0,0,0) 55%), linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 50%)'
+        }} />
+
+        {/* Noise texture */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '180px',
+        }} />
+
+        {/* Content */}
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 lg:px-12 pt-24 pb-16">
+          <div className="max-w-2xl">
+
+            {/* Stars */}
+            <div className="hero-title flex items-center gap-2 mb-7">
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} viewBox="0 0 20 20" fill="#facc15" width="16" height="16">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                ))}
+              </div>
+              <span className="text-white/55 text-sm font-medium">מעל 1,000 לקוחות מרוצים</span>
             </div>
 
-            {/* Main headline */}
-            <h1
-              className="hero-title font-black text-white leading-[1.0] tracking-tight mb-6"
-              style={{ fontSize: 'clamp(2.8rem, 6vw, 5rem)' }}
-            >
-              מרגישים <span className="text-red-400">כאב</span><br />בגב או בצוואר?
+            {/* Headline */}
+            <h1 className="hero-title font-black text-white leading-[1.05] tracking-tight mb-6"
+              style={{ fontSize: 'clamp(2.6rem, 6vw, 4.8rem)' }}>
+              מרגישים{' '}
+              <span style={{ color: '#f87171' }}>כאב</span>
+              <br />בגב או בצוואר?
             </h1>
 
             {/* Subtitle */}
-            <p
-              className="hero-sub text-white/60 font-light leading-[1.8] mb-10"
-              style={{ maxWidth: 420 }}
-            >
-              ג&apos;ו מגיע אליכם הביתה ומשחרר אתכם.<br />
-              25+ שנות ניסיון בעיסוי שוודי הוליסטי בירושלים.
+            <p className="hero-sub text-white/65 font-light leading-8 mb-3"
+              style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', maxWidth: 480 }}>
+              ג&apos;ו מגיע אליכם הביתה ומשחרר אתכם.
+            </p>
+            <p className="hero-sub text-white/40 text-sm leading-7 mb-10"
+              style={{ maxWidth: 480 }}>
+              25+ שנות ניסיון בעיסוי שוודי הוליסטי · ירושלים ופסגת זאב
             </p>
 
-            {/* CTA Buttons */}
-            <div className="hero-btns flex flex-col sm:flex-row items-start gap-3 mb-8">
-              <a
-                href={TEL}
-                className="inline-flex items-center gap-2.5 rounded-2xl bg-red-700 hover:bg-red-600 text-white px-8 py-4 font-bold shadow-lg transition-all hover:scale-105 hover:shadow-red-900/40 hover:shadow-xl text-base"
-              >
-                📞 התקשרו עכשיו
+            {/* CTA */}
+            <div className="hero-btns flex flex-col sm:flex-row items-start gap-3 mb-10">
+              <a href={TEL}
+                className="inline-flex items-center gap-3 rounded-2xl text-white font-bold px-8 py-4 text-base shadow-2xl transition-all hover:scale-105 active:scale-95"
+                style={{ background: 'linear-gradient(135deg, #b91c1c 0%, #991b1b 100%)', boxShadow: '0 8px 32px rgba(153,27,27,0.45)' }}>
+                <PhoneIcon />
+                התקשרו עכשיו — {TEL_DISPLAY}
               </a>
-              <a
-                href={WA_HREF}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 rounded-2xl border border-white/20 bg-white/5 hover:bg-white/15 text-white px-8 py-4 font-bold transition-all hover:scale-105 text-base"
-              >
-                💬 WhatsApp
+              <a href={WA_HREF} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 rounded-2xl font-bold px-7 py-4 text-base transition-all hover:scale-105 active:scale-95"
+                style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.18)', color: 'white', backdropFilter: 'blur(8px)' }}>
+                <WAIcon />
+                WhatsApp
               </a>
             </div>
 
-            {/* Feature pills */}
-            <div className="hero-pills flex flex-wrap gap-x-3 gap-y-1 text-xs text-white/40">
-              <span>🏠 טיפול בבית</span>
-              <span>·</span>
-              <span>📍 ירושלים</span>
-              <span>·</span>
-              <span>✓ ללא כאב בנסיעה</span>
+            {/* Pills */}
+            <div className="hero-pills flex flex-wrap items-center gap-x-4 gap-y-2">
+              {['🏠 טיפול בבית הלקוח', '📍 ירושלים ופסגת זאב', '✓ זמין כל ימות השבוע'].map((p, i) => (
+                <span key={i} className="text-xs text-white/40 font-medium">{p}</span>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* ── Image side (left, 40% on desktop / top on mobile) ── */}
-        <div className="relative w-full h-[40vh] lg:h-auto lg:flex-1 overflow-hidden order-first lg:order-last">
-          {/* Diagonal clip on desktop */}
-          <div
-            className="absolute inset-0 hidden lg:block"
-            style={{ clipPath: 'polygon(8% 0, 100% 0, 100% 100%, 0% 100%)' }}
-          >
-            <Image
-              src={HeroPic}
-              alt="עיסוי שוודי הוליסטי בירושלים"
-              fill
-              className="object-cover object-center"
-              priority
-            />
-            {/* Right-to-left gradient blend into text side */}
-            <div
-              className="absolute inset-0"
-              style={{ background: 'linear-gradient(to left, rgba(26,10,10,0.95) 0%, rgba(26,10,10,0) 60%)' }}
-            />
-            {/* Top & bottom vignette */}
-            <div
-              className="absolute inset-0"
-              style={{ background: 'linear-gradient(to bottom, rgba(26,10,10,0.35) 0%, transparent 25%, transparent 75%, rgba(26,10,10,0.35) 100%)' }}
-            />
-          </div>
-
-          {/* Mobile: no clip-path */}
-          <div className="absolute inset-0 lg:hidden">
-            <Image
-              src={HeroPic}
-              alt="עיסוי שוודי הוליסטי בירושלים"
-              fill
-              className="object-cover object-center"
-              priority
-            />
-            <div
-              className="absolute inset-0"
-              style={{ background: 'linear-gradient(to bottom, rgba(26,10,10,0.2) 0%, rgba(26,10,10,0.6) 100%)' }}
-            />
-          </div>
-        </div>
+        {/* Bottom fade into next section */}
+        <div className="absolute bottom-0 inset-x-0 h-32 pointer-events-none"
+          style={{ background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.6))' }} />
       </section>
 
       {/* ══ STATS ══ */}
