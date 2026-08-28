@@ -440,6 +440,12 @@ export default function Home() {
             <p className="mt-6 text-center text-xs leading-5 text-red-400 md:mt-0 md:order-1">
               &copy; {new Date().getFullYear()} ג&apos;ו עיסוי שוודי הוליסטי — ירושלים (פסגת זאב)
             </p>
+            <div className="mt-4 flex justify-center md:order-3">
+              <a href="https://rivlin.dev" target="_blank" rel="noopener noreferrer" style={{display:'flex',alignItems:'center',gap:'6px',textDecoration:'none',color:'rgba(255,255,255,0.35)',fontSize:'14px'}}>
+                פותח ב♥ ע&quot;י
+                <img src="/images/rivlin-logo.png" alt="ריבלין בניית אתרים" style={{height:'14px',width:'auto',opacity:0.6}} onError={e => { e.currentTarget.style.display='none' }} />
+              </a>
+            </div>
           </div>
         </div>
       </footer>
