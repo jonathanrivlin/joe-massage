@@ -335,25 +335,25 @@ export default function Home() {
               { name: 'גבעת שאול', slug: 'גבעת-שאול' },
               { name: 'בית הכרם', slug: 'בית-הכרם' },
               { name: 'נווה יעקב', slug: 'נווה-יעקב' },
-              { name: 'גבעה הצרפתית', slug: null },
+              { name: 'גבעה הצרפתית', slug: 'גבעה-הצרפתית' },
               { name: 'הר נוף', slug: 'הר-נוף' },
               { name: 'קרית משה', slug: 'קרית-משה' },
-              { name: 'ארנונה', slug: null },
-              { name: 'מלחה', slug: null },
-              { name: 'בקעה', slug: null },
-              { name: 'קטמון', slug: null },
-              { name: 'רחביה', slug: null },
+              { name: 'ארנונה', slug: 'ארנונה' },
+              { name: 'מלחה', slug: 'מלחה' },
+              { name: 'בקעה', slug: 'בקעה' },
+              { name: 'קטמון', slug: 'קטמון' },
+              { name: 'רחביה', slug: 'רחביה' },
               { name: 'גילה', slug: 'גילה' },
-              { name: 'עיר גנים', slug: null },
-              { name: 'תלפיות', slug: null },
-              { name: 'מושבה הגרמנית', slug: null },
-              { name: 'טלביה', slug: null },
-              { name: 'קרית יובל', slug: null },
-              { name: 'ביר"מ', slug: null },
-              { name: 'מנחה', slug: null },
-              { name: 'בית וגן', slug: null },
-              { name: 'רמת שרת', slug: null },
-              { name: 'מרכז העיר', slug: null },
+              { name: 'עיר גנים', slug: 'עיר-גנים' },
+              { name: 'תלפיות', slug: 'תלפיות' },
+              { name: 'מושבה הגרמנית', slug: 'מושבה-הגרמנית' },
+              { name: 'טלביה', slug: 'טלביה' },
+              { name: 'קרית יובל', slug: 'קרית-יובל' },
+              { name: 'ביר"מ', slug: 'בירמ' },
+              { name: 'מנחה', slug: 'מנחה' },
+              { name: 'בית וגן', slug: 'בית-וגן' },
+              { name: 'רמת שרת', slug: 'רמת-שרת' },
+              { name: 'מרכז העיר', slug: 'מרכז-העיר' },
             ].map((area) => (
               area.slug ? (
                 <Link key={area.name} href={`/עיסוי-שוודי/${area.slug}`}
@@ -470,7 +470,13 @@ export default function Home() {
                 <li><Link href="/עיסוי-שוודי/גבעת-שאול" className="hover:text-white transition-colors">עיסוי שוודי גבעת שאול</Link></li>
                 <li><Link href="/עיסוי-שוודי/בית-הכרם" className="hover:text-white transition-colors">עיסוי שוודי בית הכרם</Link></li>
                 <li><Link href="/עיסוי-שוודי/הר-נוף" className="hover:text-white transition-colors">עיסוי שוודי הר נוף</Link></li>
+                <li><Link href="/עיסוי-שוודי/נווה-יעקב" className="hover:text-white transition-colors">עיסוי שוודי נווה יעקב</Link></li>
+                <li><Link href="/עיסוי-שוודי/קרית-משה" className="hover:text-white transition-colors">עיסוי שוודי קרית משה</Link></li>
                 <li><Link href="/עיסוי-שוודי/גילה" className="hover:text-white transition-colors">עיסוי שוודי גילה</Link></li>
+                <li><Link href="/עיסוי-שוודי/רחביה" className="hover:text-white transition-colors">עיסוי שוודי רחביה</Link></li>
+                <li><Link href="/עיסוי-שוודי/קטמון" className="hover:text-white transition-colors">עיסוי שוודי קטמון</Link></li>
+                <li><Link href="/עיסוי-שוודי/ארנונה" className="hover:text-white transition-colors">עיסוי שוודי ארנונה</Link></li>
+                <li><Link href="/עיסוי-שוודי/מרכז-העיר" className="hover:text-white transition-colors">עיסוי שוודי מרכז ירושלים</Link></li>
               </ul>
             </div>
             <div>
