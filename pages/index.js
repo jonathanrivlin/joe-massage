@@ -200,11 +200,12 @@ export default function Home() {
 
               <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-100 px-4 py-1.5">
                 <span className="text-yellow-500 text-xs" role="img" aria-label="דירוג 5 כוכבים">★★★★★</span>
-                <span className="text-red-800 text-xs font-semibold">25+ שנות ניסיון · ירושלים ופסגת זאב</span>
+                <span className="text-red-800 text-xs font-semibold">מגיע אליכם הביתה · 25+ שנות ניסיון</span>
               </div>
 
               <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                עיסוי שוודי הוליסטי<br />בירושלים
+                עיסוי שוודי הוליסטי
+                <span className="block">בירושלים</span>
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
                 מטפל מנוסה עם למעלה מ-25 שנות ניסיון בעיסוי שוודי הוליסטי בירושלים. שחרור שרירים תפוסים, הפחתת כאבים, שמנים ארומתרפיים — גם בבית שלכם באזור פסגת זאב.
@@ -217,8 +218,9 @@ export default function Home() {
                   התקשרו — 052-263-5895
                 </a>
                 <a href={WA_HREF} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 transition-colors">
-                  <FontAwesomeIcon icon={faWhatsapp} className="w-4 h-4 text-green-600" />
+                  className="inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors"
+                  style={{ background: '#25D366' }}>
+                  <FontAwesomeIcon icon={faWhatsapp} className="w-4 h-4" />
                   WhatsApp
                 </a>
               </div>
@@ -234,7 +236,7 @@ export default function Home() {
                 </span>
                 <span className="inline-flex items-center gap-1.5">
                   <FontAwesomeIcon icon={faCheck} className="w-3.5 h-3.5 text-red-700" />
-                  זמין כל ימות השבוע (חוץ משבת)
+                  ראשון–חמישי 8:00–21:00 | שישי עד הצהריים
                 </span>
               </div>
             </div>
