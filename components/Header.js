@@ -43,8 +43,7 @@ export default function Header() {
             052-263-5895
           </a>
           <a href={WA_HREF} target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors"
-            style={{ background: '#25D366' }}>
+            className="inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-semibold shadow-sm transition-colors" style={{ background: '#25D366', color: '#0d3321' }}>
             <FontAwesomeIcon icon={faWhatsapp} className="w-3.5 h-3.5" />
             WhatsApp
           </a>

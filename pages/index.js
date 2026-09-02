@@ -218,8 +218,7 @@ export default function Home() {
                   התקשרו — 052-263-5895
                 </a>
                 <a href={WA_HREF} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors"
-                  style={{ background: '#25D366' }}>
+                  className="inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-semibold shadow-sm transition-colors" style={{ background: '#25D366', color: '#0d3321' }}>
                   <FontAwesomeIcon icon={faWhatsapp} className="w-4 h-4" />
                   WhatsApp
                 </a>
@@ -418,8 +417,8 @@ export default function Home() {
               052-263-5895
             </a>
             <a href={WA_HREF} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors"
-              style={{ background: '#25D366' }}>
+              className="inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-semibold shadow-sm transition-colors"
+              style={{ background: '#25D366', color: '#0d3321' }}>
               <FontAwesomeIcon icon={faWhatsapp} className="w-4 h-4" />
               WhatsApp
             </a>
@@ -442,7 +441,7 @@ export default function Home() {
             ].map((t, i) => (
               <div key={i} className="rounded-2xl bg-gray-50 p-6 ring-1 ring-gray-200">
                 <div className="flex gap-1 mb-4" role="img" aria-label="דירוג 5 כוכבים">
-                  {[...Array(5)].map((_, j) => <span key={j} className="text-yellow-400 text-sm" aria-hidden="true">★</span>)}
+                  {[...Array(5)].map((_, j) => <span key={j} className="text-amber-700 text-sm" aria-hidden="true">★</span>)}
                 </div>
                 <p className="text-sm leading-7 text-gray-700 mb-4">&ldquo;{t.text}&rdquo;</p>
                 <div className="text-sm font-semibold text-gray-900">{t.name} · <span className="text-gray-500 font-normal">{t.area}</span></div>
@@ -472,8 +471,8 @@ export default function Home() {
           התקשרו
         </a>
         <a href={WA_HREF} target="_blank" rel="noopener noreferrer"
-          className="flex-1 inline-flex items-center justify-center gap-2 rounded-md py-3 text-sm font-semibold text-white transition-colors"
-          style={{ background: '#25D366' }}>
+          className="flex-1 inline-flex items-center justify-center gap-2 rounded-md py-3 text-sm font-semibold transition-colors"
+          style={{ background: '#25D366', color: '#0d3321' }}>
           <FontAwesomeIcon icon={faWhatsapp} className="w-4 h-4" />
           WhatsApp
         </a>

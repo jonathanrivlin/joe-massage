@@ -78,7 +78,7 @@ export default function Footer() {
           </div>
 
           {/* ── Bottom bar ── */}
-          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-red-400">
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-red-200">
             <p>&copy; {new Date().getFullYear()} ג&apos;ו עיסוי שוודי הוליסטי — ירושלים</p>
             <div className="flex items-center gap-4">
               <Link href="/accessibility" className="hover:text-red-200 transition-colors">הצהרת נגישות</Link>
