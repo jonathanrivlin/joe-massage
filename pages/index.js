@@ -155,7 +155,12 @@ export default function Home() {
         <meta property="og:description" content="עיסוי שוודי הוליסטי בירושלים. שחרור שרירים, הפחתת כאב, שמנים ארומתרפיים. טיפול בבית הלקוח. 052-263-5895" />
         <meta property="og:locale" content="he_IL" />
         <meta property="og:site_name" content="ג'ו עיסוי שוודי הוליסטי" />
-        <meta name="twitter:card" content="summary" />
+        <meta property="og:image" content={`${SITE_URL}/massage-hero.jpg`} />
+        <meta property="og:image:width" content="1920" />
+        <meta property="og:image:height" content="1280" />
+        <meta property="og:image:alt" content="עיסוי שוודי הוליסטי בירושלים ופסגת זאב" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={`${SITE_URL}/massage-hero.jpg`} />
         <link rel="icon" href="/favicon.ico" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </Head>

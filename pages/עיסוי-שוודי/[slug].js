@@ -340,6 +340,12 @@ export default function NeighborhoodPage({ neighborhood: n }) {
         <meta property="og:title" content={n.title} />
         <meta property="og:description" content={n.description} />
         <meta property="og:locale" content="he_IL" />
+        <meta property="og:image" content={`${SITE_URL}/massage-hero.jpg`} />
+        <meta property="og:image:width" content="1920" />
+        <meta property="og:image:height" content="1280" />
+        <meta property="og:image:alt" content={`עיסוי שוודי הוליסטי ב${n.name} ירושלים`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={`${SITE_URL}/massage-hero.jpg`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </Head>
 
