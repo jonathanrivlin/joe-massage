@@ -65,7 +65,7 @@ const jsonLd = {
         ]
       },
       "sameAs": [`https://wa.me/9720522635895`],
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "47", "bestRating": "5" }
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "3", "bestRating": "5" }
     },
     {
       "@type": "WebSite",
@@ -74,6 +74,24 @@ const jsonLd = {
       "name": "ג'ו עיסוי שוודי הוליסטי בירושלים ופסגת זאב",
       "inLanguage": "he",
       "publisher": { "@id": `${SITE_URL}/#business` }
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/#webpage`,
+      "url": SITE_URL,
+      "name": "עיסוי שוודי בירושלים | ג'ו — 25+ שנות ניסיון",
+      "description": "עיסוי שוודי הוליסטי בירושלים — 25+ שנות ניסיון. מגיע אליכם הביתה בפסגת זאב, רמות, גבעת שאול וכל ירושלים.",
+      "inLanguage": "he",
+      "isPartOf": { "@id": `${SITE_URL}/#website` },
+      "about": { "@id": `${SITE_URL}/#business` },
+      "breadcrumb": { "@id": `${SITE_URL}/#breadcrumb` }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${SITE_URL}/#breadcrumb`,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "דף הבית", "item": SITE_URL }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -142,7 +160,7 @@ export default function Home() {
     <>
       <Head>
         <title>עיסוי שוודי בירושלים | ג&apos;ו — 25+ שנות ניסיון</title>
-        <meta name="description" content="מעסה שוודי הוליסטי עם 25+ שנות ניסיון. מגיע אליכם הביתה — פסגת זאב, רמות, גבעת שאול וכל ירושלים. שחרור שרירים, שמנים ארומתרפיים. 052-263-5895" />
+        <meta name="description" content="עיסוי שוודי הוליסטי בירושלים — 25+ שנות ניסיון. מגיע אליכם הביתה בפסגת זאב, רמות, גבעת שאול וכל ירושלים. שחרור שרירים, שמנים ארומתרפיים. 052-263-5895" />
         <meta name="keywords" content="עיסוי שוודי ירושלים, עיסוי שוודי פסגת זאב, מעסה ירושלים, מעסה פסגת זאב, עיסוי הוליסטי ירושלים, עיסוי בבית ירושלים, שחרור שרירים ירושלים, עיסוי רקמות עמוק ירושלים, מעסה שוודי פסגת זאב" />
         <link rel="canonical" href={SITE_URL} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
