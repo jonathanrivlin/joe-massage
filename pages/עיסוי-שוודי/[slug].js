@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Header from '../components/Header'
+import Header from '../../components/Header'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faPhone, faLocationDot, faCheck, faHouse, faClock, faTrophy, faHandsHolding, faLeaf, faHeart
