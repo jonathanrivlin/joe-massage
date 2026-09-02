@@ -83,9 +83,9 @@ export default function Footer() {
             <div className="flex items-center gap-4">
               <Link href="/accessibility" className="hover:text-red-200 transition-colors">הצהרת נגישות</Link>
               <a href="https://rivlin.dev" target="_blank" rel="noopener noreferrer"
-                style={{display:'flex',alignItems:'center',gap:'5px',textDecoration:'none',color:'rgba(255,255,255,0.3)'}}>
+                style={{display:'flex',alignItems:'center',gap:'5px',textDecoration:'none',color:'#fecaca'}}>
                 פותח ב♥ ע&quot;י
-                <img src="/images/rivlin-logo.png" alt="ריבלין" style={{height:'12px',width:'auto',opacity:0.5}} onError={e => { e.currentTarget.style.display='none' }} />
+                <img src="/images/rivlin-logo.png" alt="ריבלין" style={{height:'12px',width:'auto',opacity:0.8}} onError={e => { e.currentTarget.style.display='none' }} />
               </a>
             </div>
           </div>
