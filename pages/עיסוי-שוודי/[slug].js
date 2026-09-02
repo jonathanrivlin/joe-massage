@@ -280,6 +280,8 @@ const NEIGHBORHOODS = {
   },
 }
 
+const NAME_TO_SLUG = {'פסגת זאב': 'פסגת-זאב', 'רמות': 'רמות', 'גבעת שאול': 'גבעת-שאול', 'בית הכרם': 'בית-הכרם', 'נווה יעקב': 'נווה-יעקב', 'הר נוף': 'הר-נוף', 'קרית משה': 'קרית-משה', 'גבעה הצרפתית': 'גבעה-הצרפתית', 'ארנונה': 'ארנונה', 'מלחה': 'מלחה', 'בקעה': 'בקעה', 'קטמון': 'קטמון', 'רחביה': 'רחביה', 'עיר גנים': 'עיר-גנים', 'תלפיות': 'תלפיות', 'מושבה הגרמנית': 'מושבה-הגרמנית', 'טלביה': 'טלביה', 'קרית יובל': 'קרית-יובל', 'בית וגן': 'בית-וגן', 'רמת שרת': 'רמת-שרת', 'מרכז העיר': 'מרכז-העיר', 'בירמ': 'בירמ', 'מנחה': 'מנחה', 'גילה': 'גילה'}
+
 export async function getStaticPaths() {
   return {
     paths: Object.keys(NEIGHBORHOODS).map(slug => ({ params: { slug } })),
@@ -497,7 +499,7 @@ export default function NeighborhoodPage({ neighborhood: n }) {
             <h3 className="text-base font-semibold text-gray-900 mb-4">שכונות קרובות שאנחנו משרתים</h3>
             <div className="flex flex-wrap gap-3">
               {n.nearby.map(area => (
-                <Link key={area} href={`/עיסוי-שוודי/${encodeURIComponent(area)}`}
+                <Link key={area} href={`/עיסוי-שוודי/${NAME_TO_SLUG[area] || area}`}
                   className="inline-flex items-center gap-1.5 rounded-full bg-gray-50 px-4 py-2 text-sm text-gray-600 ring-1 ring-gray-200 hover:ring-red-300 hover:bg-red-50 transition-all">
                   <FontAwesomeIcon icon={faLocationDot} className="w-3 h-3 text-red-700" />
                   עיסוי שוודי {area}
