@@ -12,6 +12,7 @@ const WA_HREF = "https://wa.me/9720522635895?text=%D7%A9%D7%9C%D7%95%D7%9D%2C+%D
 const navigation = [
   { name: 'דף הבית', href: '/' },
   { name: 'אודות', href: '/#about' },
+  { name: 'אזורי שירות', href: '/#areas' },
   { name: 'שאלות נפוצות', href: '/#faq' },
   { name: 'צור קשר', href: '/#contact' },
 ]
@@ -29,7 +30,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav — clean underline style */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-10">
           {navigation.map((item) => (
             <Link key={item.name} href={item.href}
               className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors relative group">
