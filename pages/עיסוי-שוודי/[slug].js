@@ -493,7 +493,7 @@ export default function NeighborhoodPage({ neighborhood: n }) {
           </div>
         </section>
 
-        {/* ── NEARBY ── */
+        {/* ── NEARBY ── */}
         <section className="bg-white py-12" aria-label="שכונות קרובות">
           <div className="mx-auto max-w-4xl px-6 lg:px-8">
             <h3 className="text-base font-semibold text-gray-900 mb-4">שכונות קרובות שאנחנו משרתים</h3>
