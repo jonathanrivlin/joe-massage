@@ -330,18 +330,44 @@ export default function Home() {
 
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
             {[
-              'פסגת זאב', 'רמות', 'גבעת שאול', 'בית הכרם',
-              'נווה יעקב', 'גבעה הצרפתית', 'הר נוף', 'קרית משה',
-              'ארנונה', 'מלחה', 'בקעה', 'קטמון',
-              'רחביה', 'גילה', 'עיר גנים', 'תלפיות',
-              'מושבה הגרמנית', 'טלביה', 'קרית יובל', 'ביר"מ',
-              'מנחה', 'בית וגן', 'רמת שרת', 'מרכז העיר',
+              { name: 'פסגת זאב', slug: 'פסגת-זאב' },
+              { name: 'רמות', slug: 'רמות' },
+              { name: 'גבעת שאול', slug: 'גבעת-שאול' },
+              { name: 'בית הכרם', slug: 'בית-הכרם' },
+              { name: 'נווה יעקב', slug: 'נווה-יעקב' },
+              { name: 'גבעה הצרפתית', slug: null },
+              { name: 'הר נוף', slug: 'הר-נוף' },
+              { name: 'קרית משה', slug: 'קרית-משה' },
+              { name: 'ארנונה', slug: null },
+              { name: 'מלחה', slug: null },
+              { name: 'בקעה', slug: null },
+              { name: 'קטמון', slug: null },
+              { name: 'רחביה', slug: null },
+              { name: 'גילה', slug: 'גילה' },
+              { name: 'עיר גנים', slug: null },
+              { name: 'תלפיות', slug: null },
+              { name: 'מושבה הגרמנית', slug: null },
+              { name: 'טלביה', slug: null },
+              { name: 'קרית יובל', slug: null },
+              { name: 'ביר"מ', slug: null },
+              { name: 'מנחה', slug: null },
+              { name: 'בית וגן', slug: null },
+              { name: 'רמת שרת', slug: null },
+              { name: 'מרכז העיר', slug: null },
             ].map((area) => (
-              <div key={area}
-                className="flex items-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-medium text-gray-700 ring-1 ring-gray-200 hover:ring-red-200 hover:text-red-800 transition-all">
-                <FontAwesomeIcon icon={faLocationDot} className="w-3.5 h-3.5 text-red-700 flex-shrink-0" />
-                {area}
-              </div>
+              area.slug ? (
+                <Link key={area.name} href={`/עיסוי-שוודי/${area.slug}`}
+                  className="flex items-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-medium text-red-800 ring-1 ring-red-200 hover:ring-red-400 hover:bg-red-50 transition-all">
+                  <FontAwesomeIcon icon={faLocationDot} className="w-3.5 h-3.5 text-red-700 flex-shrink-0" />
+                  {area.name}
+                </Link>
+              ) : (
+                <div key={area.name}
+                  className="flex items-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-medium text-gray-700 ring-1 ring-gray-200 hover:ring-red-200 hover:text-red-800 transition-all">
+                  <FontAwesomeIcon icon={faLocationDot} className="w-3.5 h-3.5 text-red-700 flex-shrink-0" />
+                  {area.name}
+                </div>
+              )
             ))}
           </div>
 
@@ -439,9 +465,12 @@ export default function Home() {
             <div>
               <h3 className="text-sm font-semibold text-red-200 mb-3">אזורי שירות</h3>
               <ul className="text-sm text-red-300 leading-7 space-y-1">
-                <li>פסגת זאב · רמות</li>
-                <li>גבעת שאול · בית הכרם</li>
-                <li>נווה יעקב · כל ירושלים</li>
+                <li><Link href="/עיסוי-שוודי/פסגת-זאב" className="hover:text-white transition-colors">עיסוי שוודי פסגת זאב</Link></li>
+                <li><Link href="/עיסוי-שוודי/רמות" className="hover:text-white transition-colors">עיסוי שוודי רמות</Link></li>
+                <li><Link href="/עיסוי-שוודי/גבעת-שאול" className="hover:text-white transition-colors">עיסוי שוודי גבעת שאול</Link></li>
+                <li><Link href="/עיסוי-שוודי/בית-הכרם" className="hover:text-white transition-colors">עיסוי שוודי בית הכרם</Link></li>
+                <li><Link href="/עיסוי-שוודי/הר-נוף" className="hover:text-white transition-colors">עיסוי שוודי הר נוף</Link></li>
+                <li><Link href="/עיסוי-שוודי/גילה" className="hover:text-white transition-colors">עיסוי שוודי גילה</Link></li>
               </ul>
             </div>
             <div>
