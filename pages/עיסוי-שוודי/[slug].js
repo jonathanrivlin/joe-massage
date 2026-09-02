@@ -504,7 +504,7 @@ export default function NeighborhoodPage({ neighborhood: n }) {
                 </Link>
               ))}
               <Link href="/" className="inline-flex items-center gap-1.5 rounded-full bg-red-50 px-4 py-2 text-sm text-red-800 font-medium ring-1 ring-red-200 hover:bg-red-100 transition-colors">
-                כל אזורי השירות →
+                ← כל אזורי השירות
               </Link>
             </div>
           </div>
