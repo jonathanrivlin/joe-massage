@@ -314,14 +314,22 @@ export default function NeighborhoodPage({ neighborhood: n }) {
         },
         "geo": { "@type": "GeoCoordinates", "latitude": n.geo.lat, "longitude": n.geo.lng },
         "areaServed": { "@type": "Neighborhood", "name": n.name },
-        "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "21:00" }],
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "47", "bestRating": "5" }
+        "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "08:00", "closes": "21:00" }, { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday"], "opens": "08:00", "closes": "13:00" }],
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "3", "bestRating": "5" }
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "דף הבית", "item": SITE_URL },
           { "@type": "ListItem", "position": 2, "name": `עיסוי שוודי ב${n.name}`, "item": pageUrl },
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": `האם ג'ו מגיע לעיסוי שוודי ב${n.name}?`, "acceptedAnswer": { "@type": "Answer", "text": `כן — ג'ו מגיע אליכם הביתה ב${n.name} ובכל שכונות ירושלים. מגיעים עם מיטת עיסוי מקצועית וכל הציוד הדרוש.` } },
+          { "@type": "Question", "name": "כמה זמן אורך הטיפול?", "acceptedAnswer": { "@type": "Answer", "text": "טיפול עיסוי שוודי סטנדרטי אורך 60-90 דקות. אורך הטיפול מותאם לצרכי המטופל ומוסכם מראש." } },
+          { "@type": "Question", "name": `כמה מהר אפשר לתאם עיסוי ב${n.name}?`, "acceptedAnswer": { "@type": "Answer", "text": "מומלץ לתאם יום-יומיים מראש. ג'ו מנסה להתאים גם לפניות ספונטניות — מוזמנים לפנות ולבדוק זמינות." } }
         ]
       }
     ]
@@ -464,18 +472,42 @@ export default function NeighborhoodPage({ neighborhood: n }) {
           </div>
         </section>
 
-        {/* ── NEARBY ── */}
+
+        {/* ── FAQ ── */}
+        <section className="bg-gray-50 py-12" aria-label="שאלות נפוצות">
+          <div className="mx-auto max-w-4xl px-6 lg:px-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-6">שאלות נפוצות על עיסוי שוודי ב{n.name}</h2>
+            <div className="space-y-4">
+              {[
+                { q: `האם ג'ו מגיע לעיסוי שוודי ב${n.name}?`, a: `כן — ג'ו מגיע אליכם הביתה ב${n.name} ובכל שכונות ירושלים. מגיעים עם מיטת עיסוי מקצועית וכל הציוד הדרוש.` },
+                { q: 'כמה עולה עיסוי שוודי?', a: 'לפרטים על מחירים ומבצעים — מוזמנים לפנות ישירות בטלפון או WhatsApp. ג'ו מתאים את הטיפול לצרכים ולתקציב.' },
+                { q: 'כמה זמן אורך הטיפול?', a: 'טיפול עיסוי שוודי סטנדרטי אורך 60-90 דקות. אורך הטיפול מותאם לצרכי המטופל ומוסכם מראש.' },
+                { q: `כמה מהר אפשר לתאם עיסוי ב${n.name}?`, a: 'מומלץ לתאם יום-יומיים מראש. ג'ו מנסה להתאים גם לפניות ספונטניות — מוזמנים לפנות ולבדוק זמינות.' },
+              ].map((item, i) => (
+                <div key={i} className="bg-white rounded-xl p-5 ring-1 ring-gray-200">
+                  <h3 className="font-semibold text-gray-900 mb-2">{item.q}</h3>
+                  <p className="text-sm leading-6 text-gray-600">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── NEARBY ── */
         <section className="bg-white py-12" aria-label="שכונות קרובות">
           <div className="mx-auto max-w-4xl px-6 lg:px-8">
             <h3 className="text-base font-semibold text-gray-900 mb-4">שכונות קרובות שאנחנו משרתים</h3>
             <div className="flex flex-wrap gap-3">
-              {n.nearby.map(area => (
-                <span key={area}
-                  className="inline-flex items-center gap-1.5 rounded-full bg-gray-50 px-4 py-2 text-sm text-gray-600 ring-1 ring-gray-200">
-                  <FontAwesomeIcon icon={faLocationDot} className="w-3 h-3 text-red-700" />
-                  {area}
-                </span>
-              ))}
+              {n.nearby.map(area => {
+                const areaSlug = Object.values(NEIGHBORHOODS).find(nb => nb.name === area)?.slug || area
+                return (
+                  <Link key={area} href={`/עיסוי-שוודי/${areaSlug}`}
+                    className="inline-flex items-center gap-1.5 rounded-full bg-gray-50 px-4 py-2 text-sm text-gray-600 ring-1 ring-gray-200 hover:ring-red-300 hover:bg-red-50 transition-all">
+                    <FontAwesomeIcon icon={faLocationDot} className="w-3 h-3 text-red-700" />
+                    עיסוי שוודי {area}
+                  </Link>
+                )
+              })}
               <Link href="/" className="inline-flex items-center gap-1.5 rounded-full bg-red-50 px-4 py-2 text-sm text-red-800 font-medium ring-1 ring-red-200 hover:bg-red-100 transition-colors">
                 כל אזורי השירות →
               </Link>
