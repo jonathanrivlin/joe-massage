@@ -17,7 +17,7 @@ export default function Footer() {
             <div>
               <h3 className="text-base font-bold text-white mb-3">ג&apos;ו עיסוי שוודי הוליסטי</h3>
               <p className="text-sm text-red-300 leading-6 mb-4">מעסה מקצועי בירושלים עם 25+ שנות ניסיון. מגיע אליכם הביתה בכל שכונות ירושלים.</p>
-              <div className="flex items-center gap-1 text-yellow-400 text-sm">★★★★★</div>
+              <div className="flex items-center gap-1 text-yellow-400 text-sm" role="img" aria-label="דירוג 5 כוכבים מתוך 5"><span aria-hidden="true">★★★★★</span></div>
             </div>
 
             {/* Col 2: Areas 1 */}

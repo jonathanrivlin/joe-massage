@@ -181,7 +181,7 @@ export default function Home() {
             <div className="mx-auto max-w-2xl lg:mx-0">
 
               <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-100 px-4 py-1.5">
-                <span className="text-yellow-500 text-xs">★★★★★</span>
+                <span className="text-yellow-500 text-xs" role="img" aria-label="דירוג 5 כוכבים">★★★★★</span>
                 <span className="text-red-800 text-xs font-semibold">25+ שנות ניסיון · ירושלים ופסגת זאב</span>
               </div>
 
@@ -421,8 +421,8 @@ export default function Home() {
               { text: '25 שנות ניסיון מורגשות. העיסוי השוודי ב-גבעת שאול היה מדויק — הבין בדיוק איפה הכאב ושחרר אותו. שירות אדיב, מקצועי ומגיעים אליכם.', name: 'ד.ש', area: 'גבעת שאול' },
             ].map((t, i) => (
               <div key={i} className="rounded-2xl bg-gray-50 p-6 ring-1 ring-gray-200">
-                <div className="flex gap-1 mb-4" aria-label="דירוג 5 כוכבים">
-                  {[...Array(5)].map((_, j) => <span key={j} className="text-yellow-400 text-sm">★</span>)}
+                <div className="flex gap-1 mb-4" role="img" aria-label="דירוג 5 כוכבים">
+                  {[...Array(5)].map((_, j) => <span key={j} className="text-yellow-400 text-sm" aria-hidden="true">★</span>)}
                 </div>
                 <p className="text-sm leading-7 text-gray-700 mb-4">&ldquo;{t.text}&rdquo;</p>
                 <div className="text-sm font-semibold text-gray-900">{t.name} · <span className="text-gray-500 font-normal">{t.area}</span></div>
