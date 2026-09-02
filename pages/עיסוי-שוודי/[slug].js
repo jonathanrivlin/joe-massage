@@ -486,18 +486,7 @@ export default function NeighborhoodPage({ neighborhood: n }) {
       </main>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-red-900 text-white" role="contentinfo">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-8">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-red-300">ג&apos;ו עיסוי שוודי הוליסטי — {n.name}, ירושלים</p>
-            <div className="flex gap-4 text-sm">
-              <Link href="/" className="text-red-300 hover:text-white transition-colors">דף הבית</Link>
-              <Link href="/accessibility" className="text-red-300 hover:text-white transition-colors">נגישות</Link>
-              <a href={`tel:${PHONE}`} className="text-red-300 hover:text-white transition-colors">{PHONE_DISPLAY}</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+
     </>
   )
 }
