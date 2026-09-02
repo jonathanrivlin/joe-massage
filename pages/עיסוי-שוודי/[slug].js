@@ -498,16 +498,13 @@ export default function NeighborhoodPage({ neighborhood: n }) {
           <div className="mx-auto max-w-4xl px-6 lg:px-8">
             <h3 className="text-base font-semibold text-gray-900 mb-4">שכונות קרובות שאנחנו משרתים</h3>
             <div className="flex flex-wrap gap-3">
-              {n.nearby.map(area => {
-                const areaSlug = Object.values(NEIGHBORHOODS).find(nb => nb.name === area)?.slug || area
-                return (
-                  <Link key={area} href={`/עיסוי-שוודי/${areaSlug}`}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-gray-50 px-4 py-2 text-sm text-gray-600 ring-1 ring-gray-200 hover:ring-red-300 hover:bg-red-50 transition-all">
-                    <FontAwesomeIcon icon={faLocationDot} className="w-3 h-3 text-red-700" />
-                    עיסוי שוודי {area}
-                  </Link>
-                )
-              })}
+              {n.nearby.map(area => (
+                <Link key={area} href={`/עיסוי-שוודי/${encodeURIComponent(area)}`}
+                  className="inline-flex items-center gap-1.5 rounded-full bg-gray-50 px-4 py-2 text-sm text-gray-600 ring-1 ring-gray-200 hover:ring-red-300 hover:bg-red-50 transition-all">
+                  <FontAwesomeIcon icon={faLocationDot} className="w-3 h-3 text-red-700" />
+                  עיסוי שוודי {area}
+                </Link>
+              ))}
               <Link href="/" className="inline-flex items-center gap-1.5 rounded-full bg-red-50 px-4 py-2 text-sm text-red-800 font-medium ring-1 ring-red-200 hover:bg-red-100 transition-colors">
                 כל אזורי השירות →
               </Link>
