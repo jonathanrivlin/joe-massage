@@ -376,7 +376,7 @@ export default function NeighborhoodPage({ neighborhood: n }) {
             </nav>
 
             <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-100 px-4 py-1.5">
-              <span className="text-yellow-500 text-xs">★★★★★</span>
+              <span className="text-amber-700 text-xs" role="img" aria-label="דירוג 5 כוכבים">★★★★★</span>
               <span className="text-red-800 text-xs font-semibold">25+ שנות ניסיון · {n.name} · ירושלים</span>
             </div>
 
@@ -454,7 +454,7 @@ export default function NeighborhoodPage({ neighborhood: n }) {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               רוצים לקבוע עיסוי שוודי ב{n.name}?
             </h2>
-            <p className="text-gray-600 mb-8">ג&apos;ו מגיע אליכם הביתה — מתאמים בקלות, ראשון עד שישי 8:00–21:00</p>
+            <p className="text-gray-600 mb-8">ג&apos;ו מגיע אליכם הביתה — ראשון–חמישי 8:00–21:00, שישי עד הצהריים</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={`tel:${PHONE}`}
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-red-800 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-red-900 transition-colors">
@@ -462,8 +462,8 @@ export default function NeighborhoodPage({ neighborhood: n }) {
                 התקשרו — {PHONE_DISPLAY}
               </a>
               <a href={WA_HREF} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-md py-3 px-6 text-sm font-semibold text-white transition-colors"
-                style={{ background: '#25D366' }}>
+                className="inline-flex items-center justify-center gap-2 rounded-md py-3 px-6 text-sm font-semibold transition-colors"
+                style={{ background: '#25D366', color: '#0d3321' }}>
                 <FontAwesomeIcon icon={faWhatsapp} className="w-4 h-4" />
                 WhatsApp
               </a>
