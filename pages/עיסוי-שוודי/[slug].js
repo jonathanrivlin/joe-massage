@@ -403,7 +403,7 @@ export default function NeighborhoodPage({ neighborhood: n }) {
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <FontAwesomeIcon icon={faClock} className="w-3.5 h-3.5 text-red-700" />
-                ראשון–שישי 8:00–21:00
+                ראשון–חמישי 8:00–21:00 | שישי עד הצהריים
               </span>
             </div>
           </div>

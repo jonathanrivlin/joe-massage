@@ -36,7 +36,7 @@ const jsonLd = {
         "description": "פסגת זאב, ירושלים"
       },
       "geo": { "@type": "GeoCoordinates", "latitude": 31.8285, "longitude": 35.2369 },
-      "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "21:00" }],
+      "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "08:00", "closes": "21:00" }, { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday"], "opens": "08:00", "closes": "13:00" }],
       "areaServed": [
         { "@type": "City", "name": "ירושלים" },
         { "@type": "Neighborhood", "name": "פסגת זאב" },
@@ -470,8 +470,7 @@ export default function Home() {
             <div>
               <h3 className="text-base font-bold text-white mb-3">ג&apos;ו עיסוי שוודי הוליסטי</h3>
               <p className="text-sm text-red-300 leading-6 mb-4">מעסה מקצועי בירושלים עם 25+ שנות ניסיון. מגיע אליכם הביתה בכל שכונות ירושלים.</p>
-              <div className="flex items-center gap-1 text-yellow-400 text-sm mb-1">★★★★★</div>
-              <p className="text-xs text-red-400">47+ לקוחות מרוצים</p>
+              <div className="flex items-center gap-1 text-yellow-400 text-sm">★★★★★</div>
             </div>
 
             {/* Col 2: Areas 1 */}
@@ -520,7 +519,7 @@ export default function Home() {
                 </a>
                 <p className="flex items-center gap-2 text-sm text-red-300">
                   <FontAwesomeIcon icon={faClock} className="w-4 h-4 text-red-400" />
-                  ראשון–שישי 8:00–21:00
+                  ראשון–חמישי 8:00–21:00 | שישי עד הצהריים
                 </p>
               </div>
               <a href="tel:0522635895"
