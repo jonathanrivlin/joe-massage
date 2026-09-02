@@ -50,7 +50,12 @@ export default function Header() {
           </a>
         </div>
 
-        <div className="flex lg:hidden">
+        <div className="flex lg:hidden items-center gap-2">
+          <a href="tel:0522635895"
+            className="inline-flex items-center gap-1.5 rounded-md bg-red-800 px-3 py-2 text-sm font-semibold text-white shadow-sm">
+            <FontAwesomeIcon icon={faPhone} className="w-3.5 h-3.5" />
+            <span>052-263-5895</span>
+          </a>
           <button type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
             onClick={() => setMobileMenuOpen(true)}>
