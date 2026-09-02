@@ -195,7 +195,7 @@ export default function Home() {
       <main id="main-content">
       <section className="relative bg-white" aria-label="ראשי">
         <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
-          <div className="px-6 pt-10 pb-24 sm:pb-32 lg:col-span-7 lg:px-0 lg:pt-48 lg:pb-56 xl:col-span-6">
+          <div className="px-6 pt-10 pb-16 sm:pb-24 lg:col-span-7 lg:px-0 lg:pt-24 lg:pb-24 xl:col-span-6">
             <div className="mx-auto max-w-2xl lg:mx-0">
 
               <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-100 px-4 py-1.5">
