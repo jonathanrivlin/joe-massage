@@ -208,7 +208,7 @@ export default function Home() {
                 <span className="block">בירושלים</span>
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                ג'ו מגיע אליכם הביתה — פסגת זאב, רמות, גבעת שאול וכל ירושלים. שחרור שרירים תפוסים, הפחתת כאבים, שמנים ארומתרפיים. 25+ שנות ניסיון.
+                ג&apos;ו מגיע אליכם הביתה — פסגת זאב, רמות, גבעת שאול וכל ירושלים. שחרור שרירים תפוסים, הפחתת כאבים, שמנים ארומתרפיים. 25+ שנות ניסיון.
               </p>
 
               <div className="mt-10 flex flex-col sm:flex-row items-start gap-4">
