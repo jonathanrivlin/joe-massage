@@ -46,7 +46,7 @@ export default function Accessibility() {
   return (
     <>
       <Head>
-        <title>הצהרת נגישות | ג&apos;ו עיסוי שוודי הוליסטי</title>
+        <title>הצהרת נגישות | ☯ ג&apos;ו עיסוי שוודי בירושלים</title>
         <meta name="description" content="הצהרת נגישות — אתר ג'ו עיסוי שוודי עומד בתקן WCAG 2.0 ברמת AA ובתקנות שיווין זכויות לאנשים עם מוגבלות." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://www.joe-massage.com/accessibility" />
